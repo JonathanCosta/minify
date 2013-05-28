@@ -1,3 +1,15 @@
+nginx - seushop.com.br.conf
+=============================
+
+location ~* ^.+.(js|css)$ {
+    access_log off;
+    log_not_found off;
+    expires 30d;
+    rewrite ^(.*\.(js|css))$ /minifiy/min/index.php?f=$1&amp;debug=0 last;
+}
+
+=============================
+
 WELCOME TO MINIFY!
 
 Minify is an HTTP content server. It compresses sources of content 
